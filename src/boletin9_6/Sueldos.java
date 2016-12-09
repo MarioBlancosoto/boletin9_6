@@ -20,14 +20,14 @@ public class Sueldos {
         int trabmenos1000=0;
         
         
-       do{
+       
         
                   do{
                       sueldo = Integer.parseInt(JOptionPane.showInputDialog("Inserte el sueldo de los trabajadores,no se permiten números negativos "));
                 }while(sueldo<0);
                   
         
-            
+            do{
           
             if(sueldo>=1000&&sueldo<=1750){
            trabmas1000++;
@@ -36,12 +36,15 @@ public class Sueldos {
                        
              }if (sueldo>0&&sueldo<1000){
                 trabmenos1000++;
-             trabTotales++;}
-             System.out.println(" os traballadores de mais de 1000 e son "+trabmas1000+"\n e os traballadores "
+             trabTotales++;
+             trabTotales = trabmas1000+trabmenos1000;
+             }
+             System.out.println(" os traballadores de mais de 1000 son "+trabmas1000+"\n e os traballadores de "
+                     + "menos de 1000 "+trabmenos1000
                      + "e a porcentaxe de menos de 1000 e "+(trabmenos1000/trabTotales)*(100)+" %");
             
-        }
-        while(sueldo!=0);
+        } while(trabTotales<50);
+       
        
   }
       
